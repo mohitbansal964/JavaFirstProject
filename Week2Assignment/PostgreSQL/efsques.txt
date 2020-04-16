@@ -1,0 +1,66 @@
+1.Write a query which displays the module code and the duration for modules whose duration is less than 6.
+
+
+2.Write a query which will display the BATCHCODE, TRAINERID, COURSECODE, STARTDATE, CAPACITY 
+and BATCHSTRENGTH of the batches handled by the trainer KRISHNAN.
+
+
+
+3.Write a query which displays all the module names of the course code 100.
+
+
+4.Write a query which displays the module names and course code for the course code 100.
+
+
+
+5."Write a query which will display the number of modules present in the course code 100. 
+<br/>
+Hint: display module name count with alias""NumberofModules"""
+
+
+6."Write a query which will display all the course code and the number of modules present 
+in that particular course.
+Hint: display module name count with alias""NumberofModules"""
+
+
+
+
+7.Write a query which will display the course title and fees which has the maximum fees.
+
+
+
+8.Write a query which will display the student id, student name, batch code, place and 
+phone number of the students who belongs to Batch '3001'.
+
+
+
+9.Write a Query which will display the student ID, Student name, Batch code, place and phone number who are from CHENNAI.
+
+
+
+
+10.Write a query which displays the total number of modules which has less than 6 days duration. 
+<BR>Hint: display total number of modules with'LESSTHANSIXDAYS' as alias.
+
+
+
+11.Write a query to display the batch code, course title, start date of the batches for the month of May and year 2012.
+
+
+
+12.Write a query to display courses code, course title, course fees of the courses for which 
+no batches/training has been planned in the month of January and year 2012.
+
+
+
+
+13.Write a query which displays the names of all the modules of the course titled 'Oracle DBA'
+
+
+
+14.Write a Query which displays the student ID, Student name, Batch code, place and phone number 
+of the student's who took training from CHENNAI in the year 2012.
+
+
+15.Write a query which will display the student id, student names who are enrolled for the course code 200?
+
