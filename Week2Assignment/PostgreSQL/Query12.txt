@@ -1,0 +1,11 @@
+ coursecode |                 title                  | fees
+------------+----------------------------------------+-------
+        101 | Certificed Java Web Developer          | 12500
+        200 | Oracle Sql Expert                      |  6500
+        201 | Oracle Developer                       | 12000
+        202 | Oracle DBA                             | 34500
+        203 | Oracle Data Ware Housing               | 24500
+        300 | DotNet 4.0 using C Sharp Certification |  8000
+        301 | Asp .net certification c#              | 12000
+        302 | Microsoft Developer                    | 30000
+(8 rows)

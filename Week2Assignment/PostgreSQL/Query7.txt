@@ -1,0 +1,4 @@
+   title    | fees
+------------+-------
+ Oracle DBA | 34500
+(1 row)

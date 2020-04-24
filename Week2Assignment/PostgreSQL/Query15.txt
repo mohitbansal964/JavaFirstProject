@@ -1,0 +1,7 @@
+ studentid | studentname
+-----------+-------------
+      1003 | BANU
+      1004 | BALAN
+      1005 | HAMEED
+      1019 | DAN
+(4 rows)
