@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Calculator</title>
+	<style type="text/css">
+		button{
+			width:100px;
+		}
+	</style>
+</head>
+<body style="background-color:#a5a9b0">
+	<div class="container container-fluid">
+		<div class="row justify-content-center">
+			<div class"col-md-12 ml-auto mr-auto">
+				<br>
+				<br>
+				<div class="card">
+					<div class="card-header font-weight-bold" style="font-size:25px;">
+						Calculator
+					</div>
+					<div class="card-body" >
+						<div class="input-group">
+							<input type="text" class="form-control" id="input" value="">
+							<div class="input-group-append">
+								<button class="btn btn-danger" type="button" id="clear" onclick="changeState(this)">
+									Clear
+								</button>
+							</div>
+						</div>
+						<div class="btn-group-lg pt-1" role="group">
+							<button id="seven" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								7
+							</button>
+							<button id="eight" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								8
+							</button>
+							<button id="nine" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								9
+							</button>
+							<button id="divide" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								/
+							</button>
+
+						</div>
+						<div class="btn-group-lg pt-1" role="group">
+							<button id="four" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								4
+							</button>
+							<button id="five" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								5
+							</button>
+							<button id="six" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								6
+							</button>
+							<button id="multiply" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								x
+							</button>
+
+						</div>
+						<div class="btn-group-lg pt-1" role="group">
+							<button id="one" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								1
+							</button>
+							<button id="two" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								2
+							</button>
+							<button id="three" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								3
+							</button>
+							<button id="subtract" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								-
+							</button>
+						</div>
+						<div class="btn-group-lg pt-1" role="group">
+							<button id="decimal" buttonValue = "7" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								.
+							</button>
+							<button id="zero" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								0
+							</button>
+							<button id="equal" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								=
+							</button>
+							<button id="add" type="button" onclick= "changeState(this)" class="btn btn-primary btn-lg">
+								+
+							</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-100"></div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<script type="text/javascript">
+		function changeState(element){
+			var inputElement = document.getElementById('input');
+			var inputValue = inputElement.value;
+			var btnValue = element.innerText;
+			if(btnValue !="=" && btnValue != "Clear"){
+				inputValue += btnValue;
+			}else if (btnValue == "="){
+				inputValue = eval(inputValue);
+			}else{
+				inputValue = "";            
+			}
+			inputElement.value = inputValue;
+
+			console.log(btnValue);
+		}
+	</script>
+</body>
+</html>
