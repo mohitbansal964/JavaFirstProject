@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<context:annotation-config />
+	<bean id="emp1" class="com.sapient.week7.Employee">
+		<property name="id" value="101"></property>
+		<property name="name" value="Mohit"></property>
+		<property name="city" value="New Delhi"></property>
+	</bean>
+
+	<bean id="emp2" class="com.sapient.week7.Employee">
+		<property name="id" value="102"></property>
+		<property name="name" value="abcd"></property>
+		<property name="city" value="Mumbai"></property>
+	</bean>
+
+
+	<bean id="emp3" class="com.sapient.week7.Employee">
+		<property name="id" value="103"></property>
+		<property name="name" value="xyz"></property>
+		<property name="city" value="Chennai"></property>
+	</bean>
+
+
+</beans>
