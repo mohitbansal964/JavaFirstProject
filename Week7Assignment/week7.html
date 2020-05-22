@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Week 7</title>
+</head>
+<body>
+	<div class="container container-fluid">
+		<br>
+		<div class="row justify-content-center">
+			<div class"col-md-12 ml-auto mr-auto">
+				<div class="card" style="width: 600px;">
+					<div class="card-header font-weight-bold" style="font-size:25px;">
+						Calculator
+					</div>
+					<div class="card-body">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="number1-label">Number 1</span>
+							</div>
+							<input type="text" id="number1" class="form-control" aria-label="Number 1" aria-describedby="number1-label"> 
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="number2-label">Number 2</span>
+							</div>
+							<input type="text" id="number2" class="form-control" aria-label="Number 2" aria-describedby="number2-label"> 
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="operation" id="add-radio" value="add">
+							<label class="form-check-label" for="add-radio">
+								Add
+							</label>
+
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="operation" id="subtract-radio" value="subtract">
+							<label class="form-check-label" for="subtract-radio">
+								Subtract
+							</label>
+
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="operation" id="multiply-radio" value="multiply">
+							<label class="form-check-label" for="multiply-radio">
+								Multiply
+							</label>
+
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="operation" id="divide-radio" value="divide">
+							<label class="form-check-label" for="divide-radio">
+								Divide
+							</label>
+						</div>
+						<button class="btn btn-primary mb-3 mt-3" type="submit" onclick="calculate()">Calculate</button>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="output-label">Output</span>
+							</div>
+							<input type="text" id="output" class="form-control" aria-label="output-label" aria-describedby="output" readonly=""> 
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-100"></div>
+			<div class"col-md-12 ml-auto mr-auto ">
+				<div class="card mt-1" style="width: 600px;">
+					<div class="card-header font-weight-bold" style="font-size:25px;">
+						Employee Data
+						<button class="btn btn-primary" style="float:right;" type="button" id="display-button" onclick="displayEmployeeData()">
+							Display All
+						</button>
+					</div>
+					<div class="card-body">
+						<div class="input-group mb-3">
+							<input type="text" id="employee-name" class="form-control" placeholder="Employee Name" aria-label="Employee name" aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="displayParticularEmployee()">
+									Display
+								</button>
+							</div>
+						</div>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Position</th>
+								</tr>
+							</thead>
+							<tbody id="employee-tbody">
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<script type="text/javascript">
+	function calculate(){
+		let number1Element = document.getElementById('number1');
+		let number2Element = document.getElementById('number2');
+		let number1 = number1Element.value;
+		let number2 = number2Element.value;
+
+		if (number1 == "" || number2 == ""){
+			alert("Enter number1 and number2");
+			return;
+		}
+
+		number1 = Number(number1);
+		number2 = Number(number2);
+		if (isNaN(number1)){
+			number1Element.value = "";
+			alert("Enter valid number");
+			return;
+		}else if(isNaN(number2)){
+			number2Element.value ="";
+			alert("Enter valid number");
+			return;
+		}
+		let checkedRadio = document.querySelector('input[name="operation"]:checked');
+		if (checkedRadio == null){
+			alert("Select Operation");
+			return;
+		}
+		let operation = checkedRadio.value;
+		let number3;
+		if(operation == "add"){
+			number3 = number1 + number2;
+		}else if(operation == "subtract"){
+			number3 = number1 - number2;
+
+		}else if(operation == "multiply"){
+			number3 = number1 * number2;
+
+		}else{
+			if(number2 == 0){
+				alert("Number 2 cannot be zero for divide operation");
+				return;
+			}
+			number3 = number1 / number2;
+		}
+		let outputElement = document.getElementById('output');
+		outputElement.value = number3;
+		console.log(number1, number2, number3);
+	}
+	var employeeDetails = [
+	{id:1, name:'a', position:'manager'}, 
+	{id:2, name:'b', position:'director'}, 
+	{id:3, name:'c', position:'associate'}
+	];
+
+	function displayEmployeeData(){
+		let tbodyElement = document.getElementById('employee-tbody');
+		tbodyElement.innerHTML = "";
+		employeeDetails.forEach( emp => {
+			let trElement = document.createElement('tr');
+			let tdElement0 = document.createElement('td');
+			let tdElement1 = document.createElement('td');
+			let tdElement2 = document.createElement('td');
+			tdElement0.append(emp['id']);
+			tdElement1.append(emp['name']);
+			tdElement2.append(emp['position']);
+			trElement.appendChild(tdElement0);
+			trElement.appendChild(tdElement1);
+			trElement.appendChild(tdElement2);
+			tbodyElement.appendChild(trElement);
+
+		})
+	}
+
+	function displayParticularEmployee(){
+		let tbodyElement = document.getElementById('employee-tbody');
+		tbodyElement.innerHTML = "";
+		let employeeNameElement = document.getElementById('employee-name');
+		let employeeName = employeeNameElement.value;
+		let emp = employeeDetails.find(obj => {
+			return obj['name'] == employeeName;
+		})
+		console.log(emp);
+		if (emp !=undefined){
+			let trElement = document.createElement('tr');
+			let tdElement0 = document.createElement('td');
+			let tdElement1 = document.createElement('td');
+			let tdElement2 = document.createElement('td');
+			tdElement0.append(emp['id']);
+			tdElement1.append(emp['name']);
+			tdElement2.append(emp['position']);
+			trElement.appendChild(tdElement0);
+			trElement.appendChild(tdElement1);
+			trElement.appendChild(tdElement2);
+			tbodyElement.appendChild(trElement);
+
+		}else{
+			alert("No employee found");
+		}
+		
+
+	}
+	</script>
+</body>
+</html>
