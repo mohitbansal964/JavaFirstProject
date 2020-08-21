@@ -6,6 +6,9 @@ public class TransactionBo {
 
 	ArrayList<Transaction> transactionData;
 
+	public TransactionBo() {
+	}
+
 	public TransactionBo(ArrayList<Transaction> transactionData) {
 		this.transactionData = transactionData;
 	}
