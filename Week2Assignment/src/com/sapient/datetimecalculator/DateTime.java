@@ -45,4 +45,10 @@ public class DateTime {
 		this.numberOfYears = numberOfYears;
 	}
 
+	@Override
+	public String toString() {
+		return "DateTime [numberOfDays=" + numberOfDays + ", numberOfWeeks=" + numberOfWeeks + ", numberOfMonths="
+				+ numberOfMonths + ", numberOfYears=" + numberOfYears + "]";
+	}
+
 }

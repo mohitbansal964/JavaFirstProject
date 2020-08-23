@@ -1,7 +1,5 @@
 package com.sapient.datetimecalculator;
 
-import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -18,19 +16,21 @@ public class Calculator {
 
 	public void displayMenu() {
 
-		System.out.println(" ".repeat(17) + "Date-Time Calculator Menu");
-		System.out.println("-".repeat(60));
-		System.out.println("1. Subtract Two Dates");
-		System.out.println("2. Add N Days, Months, Weeks and Years to given Date");
-		System.out.println("3. Subtract N  Days, Months, Weeks, Years from given Date");
-		System.out.println("4. Determine the day of the week");
-		System.out.println("5. Determine the week number for a given date");
-		System.out.println("6. Translate natural language phrases");
-		System.out.println("-".repeat(60) + "\n");
+		System.out.println(" ".repeat(17) + "Date-Time Calculator Menu (Enter -1 for exit)");
+		System.out.println("-".repeat(65));
+		System.out.println("1. Add two Dates");
+		System.out.println("2. Subtract Two Dates");
+		System.out.println("3. Add N Days, Months, Weeks and Years to given Date");
+		System.out.println("4. Subtract N  Days, Months, Weeks, Years from given Date");
+		System.out.println("5. Determine the day of the week");
+		System.out.println("6. Determine the week number for a given date");
+		System.out.println("7. Display history of session");
+//		System.out.println("7. Translate natural language phrases");
+		System.out.println("-".repeat(65));
 	}
 
 	public int enterChoice() {
-		System.out.print("Enter choice from menu: ");
+		System.out.print("\nEnter choice from menu: ");
 		int choice = -1;
 		choice = scan.nextInt();
 		scan.nextLine();
@@ -46,7 +46,6 @@ public class Calculator {
 	}
 
 	public DateTime enterN() {
-		System.out.println("Enter N: ");
 		int numberOfDays = 0;
 		int numberOfWeeks = 0;
 		int numberOfMonths = 0;
@@ -65,29 +64,31 @@ public class Calculator {
 		return n;
 	}
 
-//	public LocalDateTime addTwoDates(LocalDateTime d1, LocalDateTime d2) {
-//		LocalDateTime now = LocalDateTime.now();
-//		ZoneId zone = ZoneId.systemDefault();
-//		ZoneOffset offSet = zone.getRules().getOffset(now);
-//		System.out.println(d1.toEpochSecond(offSet));
-//		System.out.println(d2.toEpochSecond(offSet));
-//		
-//		long millis = d1.toEpochSecond(offSet) +  d2.toEpochSecond(offSet);
-//		Instant instant = Instant.ofEpochMilli(millis);
-//		LocalDateTime result = instant.atZone(zone).toLocalDateTime();
-//		return result;
-//	}
+	public DateTime addTwoDates(LocalDateTime d1, DateTime n) {
+		LocalDateTime dateAfterNDays = d1.plusDays(n.getNumberOfDays());
+		LocalDateTime dateAfterNWeeks = dateAfterNDays.plusWeeks(n.getNumberOfWeeks());
+		LocalDateTime dateAfterNMonths = dateAfterNWeeks.plusMonths(n.getNumberOfMonths());
+		LocalDateTime finalDate = dateAfterNMonths.plusYears(n.getNumberOfYears());
+
+		int day = finalDate.getDayOfMonth() % 7;
+		int week = finalDate.getDayOfMonth() / 7;
+		int month = finalDate.getMonthValue();
+		int year = finalDate.getYear();
+
+		DateTime result = new DateTime(day, week, month, year);
+		return result;
+	}
 
 	public DateTime subtractTwoDates(LocalDateTime d1, LocalDateTime d2) {
-		DateTime n;
+		DateTime result;
 		Period period = Period.between(d1.toLocalDate(), d2.toLocalDate());
 		int numberOfDays = Math.abs(period.getDays())%7;
 		int numberOfWeeks = Math.abs(period.getDays())/7;
 		int numberOfMonths = Math.abs(period.getMonths());
 		int numberOfYears = Math.abs(period.getYears());
 		
-		n = new DateTime(numberOfDays, numberOfWeeks, numberOfMonths, numberOfYears);
-		return n;
+		result = new DateTime(numberOfDays, numberOfWeeks, numberOfMonths, numberOfYears);
+		return result;
 	}
 
 	public LocalDateTime addNToGivenDate(LocalDateTime d1, DateTime n) {
