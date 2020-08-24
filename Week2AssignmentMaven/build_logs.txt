@@ -1,0 +1,40 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.sapient:mavenassignment >---------------------
+[INFO] Building mavenassignment 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ mavenassignment ---
+[INFO] Deleting C:\Users\Archana Gupta\Desktop\Sapient\JavaFirstProject\Week2AssignmentMaven\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ mavenassignment ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ mavenassignment ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to C:\Users\Archana Gupta\Desktop\Sapient\JavaFirstProject\Week2AssignmentMaven\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ mavenassignment ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ mavenassignment ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ mavenassignment ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ mavenassignment ---
+[INFO] Building jar: C:\Users\Archana Gupta\Desktop\Sapient\JavaFirstProject\Week2AssignmentMaven\target\mavenassignment-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ mavenassignment ---
+[INFO] Installing C:\Users\Archana Gupta\Desktop\Sapient\JavaFirstProject\Week2AssignmentMaven\target\mavenassignment-0.0.1-SNAPSHOT.jar to C:\Users\Archana Gupta\.m2\repository\com\sapient\mavenassignment\0.0.1-SNAPSHOT\mavenassignment-0.0.1-SNAPSHOT.jar
+[INFO] Installing C:\Users\Archana Gupta\Desktop\Sapient\JavaFirstProject\Week2AssignmentMaven\pom.xml to C:\Users\Archana Gupta\.m2\repository\com\sapient\mavenassignment\0.0.1-SNAPSHOT\mavenassignment-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.786 s
+[INFO] Finished at: 2020-08-25T01:23:09+05:30
+[INFO] ------------------------------------------------------------------------
