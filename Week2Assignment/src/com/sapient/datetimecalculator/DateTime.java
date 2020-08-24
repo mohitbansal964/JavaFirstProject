@@ -51,4 +51,12 @@ public class DateTime {
 				+ numberOfMonths + ", numberOfYears=" + numberOfYears + "]";
 	}
 
+	public String toCSVString() {
+		StringBuilder csvString = new StringBuilder();
+		csvString.append(numberOfDays + ",");
+		csvString.append(numberOfWeeks + ",");
+		csvString.append(numberOfMonths + ",");
+		csvString.append(numberOfYears);
+		return csvString.toString();
+	}
 }

@@ -91,9 +91,22 @@ public class History {
 
 	@Override
 	public String toString() {
-		return "History [choice=" + choice + ", d1=" + d1 + ", d2=" + d2 + ", n=" + n + ", result=" + result
+		return "Choice = " + choice + ", d1=" + d1 + ", d2=" + d2 + ", n=" + n + ", result=" + result
 				+ ", resultN=" + resultN + ", resultDayOfWeek=" + resultDayOfWeek + ", resultWeekNumber="
-				+ resultWeekNumber + "]\n";
+				+ resultWeekNumber + "\n";
 	}
 
+	public String toCSVString() {
+		StringBuilder csvString = new StringBuilder();
+		csvString.append(choice + ",");
+		csvString.append((d1 == null ? "" : d1) + ",");
+		csvString.append((d2 == null ? "" : d2) + ",");
+		csvString.append((n == null ? ",,," : n.toCSVString()) + ",");
+		csvString.append((result == null ? "" : result) + ",");
+		csvString.append((resultN == null ? ",,," : resultN.toCSVString()) + ",");
+		csvString.append(resultDayOfWeek + ",");
+		csvString.append((resultWeekNumber == 0 ? "" : resultWeekNumber) + "\n");
+
+		return csvString.toString();
+	}
 }

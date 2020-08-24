@@ -1,8 +1,11 @@
 package com.sapient.datetimecalculator;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import com.sapient.datetimecalculator.history.HistoryDAO;
+import com.sapient.datetimecalculator.sessionmanager.CSVSession;
+import com.sapient.datetimecalculator.sessionmanager.Session;
 
 public class CalculatorRunner {
 
@@ -14,6 +17,7 @@ public class CalculatorRunner {
 
 		LocalDateTime d1, d2, d3;
 		DateTime n, result;
+		Session csv = new CSVSession();
 
 		int choice = cal.enterChoice();
 		int count = 0;
@@ -68,9 +72,17 @@ public class CalculatorRunner {
 			case 7:
 				System.out.println(historyDao);
 				break;
+			case 8:
+				String csvReadFilename = "out.csv";
+				ArrayList<HistoryDAO> sessionsHistory = csv.read(csvReadFilename);
+				System.out.println(sessionsHistory);
+				break;
 			}
 			choice = cal.enterChoice();
 		}
+
+		String csvWriteFilename = "out.csv";
+		csv.write(historyDao, csvWriteFilename);
 		System.out.println("Exiting");
 	}
 

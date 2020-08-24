@@ -14,6 +14,14 @@ public class HistoryDAO {
 		this.sessionStorage = new HashMap<Integer, History>();
 	}
 
+	public Map<Integer, History> getSessionStorage() {
+		return sessionStorage;
+	}
+
+	public void setSessionStorage(Map<Integer, History> sessionStorage) {
+		this.sessionStorage = sessionStorage;
+	}
+
 	public void insert(int key, int choice, LocalDateTime d1, LocalDateTime d2, DateTime result) {
 		History history = new History();
 		history.setChoice(choice);

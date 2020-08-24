@@ -25,6 +25,7 @@ public class Calculator {
 		System.out.println("5. Determine the day of the week");
 		System.out.println("6. Determine the week number for a given date");
 		System.out.println("7. Display history of session");
+		System.out.println("8. Display history of all the sessions");
 //		System.out.println("7. Translate natural language phrases");
 		System.out.println("-".repeat(65));
 	}
