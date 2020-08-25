@@ -67,4 +67,35 @@ public class NumericalDate {
 		this.numberOfYears = numberOfYears;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numberOfDays;
+		result = prime * result + numberOfMonths;
+		result = prime * result + numberOfWeeks;
+		result = prime * result + numberOfYears;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		NumericalDate other = (NumericalDate) obj;
+		if (numberOfDays != other.numberOfDays)
+			return false;
+		if (numberOfMonths != other.numberOfMonths)
+			return false;
+		if (numberOfWeeks != other.numberOfWeeks)
+			return false;
+		if (numberOfYears != other.numberOfYears)
+			return false;
+		return true;
+	}
+
 }
