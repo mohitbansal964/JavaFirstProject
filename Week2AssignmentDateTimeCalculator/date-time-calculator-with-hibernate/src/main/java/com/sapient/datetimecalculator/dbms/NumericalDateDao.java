@@ -16,13 +16,12 @@ public class NumericalDateDao {
 		factory = new Configuration().configure().buildSessionFactory();
 	}
 
-	public Integer insert(int nDays, int nWeeks, int nMonths, int nYears) {
+	public Integer insert(NumericalDate date) {
 		Session session = factory.openSession();
 		Transaction tx = null;
 		Integer dateID = null;
 		try {
 			tx = session.beginTransaction();
-			NumericalDate date = new NumericalDate(nDays, nWeeks, nMonths, nYears);
 			dateID = (Integer) session.save(date);
 			tx.commit();
 		} catch (HibernateException e) {

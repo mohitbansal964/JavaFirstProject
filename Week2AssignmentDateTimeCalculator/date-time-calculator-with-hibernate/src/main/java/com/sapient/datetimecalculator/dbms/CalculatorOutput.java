@@ -2,9 +2,11 @@ package com.sapient.datetimecalculator.dbms;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class CalculatorOutput {
@@ -14,6 +16,7 @@ public class CalculatorOutput {
 	private int id;
 
 	private LocalDateTime date;
+	@OneToOne(cascade = CascadeType.REMOVE)
 	private NumericalDate numericalDate;
 
 	private String dayOfWeek;

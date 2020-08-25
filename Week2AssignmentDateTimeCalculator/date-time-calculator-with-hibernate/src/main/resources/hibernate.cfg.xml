@@ -16,16 +16,18 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
 		<!-- Print executed SQL to stdout -->
-		<property name="show_sql">true</property>
+		<property name="show_sql">false</property>
 
 		<!-- Update database on startup -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<!-- Annotated entity classes -->
 		<mapping
-			class="com.sapient.datetimecalculator.input.CalculatorInput" />
+			class="com.sapient.datetimecalculator.dbms.CalculatorInput" />
 		<mapping
-			class="com.sapient.datetimecalculator.input.NumericalDate" />
+			class="com.sapient.datetimecalculator.dbms.NumericalDate" />
+		<mapping
+			class="com.sapient.datetimecalculator.dbms.CalculatorOutput" />
 
 	</session-factory>
 </hibernate-configuration>
