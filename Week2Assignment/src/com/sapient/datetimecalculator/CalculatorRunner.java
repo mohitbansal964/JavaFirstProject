@@ -82,7 +82,7 @@ public class CalculatorRunner {
 		}
 
 		String csvWriteFilename = "out.csv";
-		csv.write(historyDao, csvWriteFilename);
+//		csv.write(historyDao, csvWriteFilename);
 		System.out.println("Exiting");
 	}
 
