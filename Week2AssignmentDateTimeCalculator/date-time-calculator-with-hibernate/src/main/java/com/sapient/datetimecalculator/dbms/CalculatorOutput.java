@@ -16,7 +16,7 @@ public class CalculatorOutput {
 	private int id;
 
 	private LocalDateTime date;
-	@OneToOne(cascade = CascadeType.REMOVE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private NumericalDate numericalDate;
 
 	private String dayOfWeek;
@@ -74,6 +74,12 @@ public class CalculatorOutput {
 
 	public void setWeekNumber(Integer weekNumber) {
 		this.weekNumber = weekNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "CalculatorOutput [date=" + date + ", numericalDate=" + numericalDate + ", dayOfWeek=" + dayOfWeek
+				+ ", weekNumber=" + weekNumber + "]";
 	}
 
 }

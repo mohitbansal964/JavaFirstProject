@@ -1,10 +1,12 @@
 package com.sapient.datetimecalculator;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.sapient.datetimecalculator.bo.CalculatorInputBo;
 import com.sapient.datetimecalculator.bo.CalculatorOutputBo;
+import com.sapient.datetimecalculator.bo.HistoryBo;
 import com.sapient.datetimecalculator.dbms.CalculatorInput;
 import com.sapient.datetimecalculator.dbms.CalculatorOutput;
 import com.sapient.datetimecalculator.operations.AddNToGivenDate;
@@ -26,17 +28,29 @@ public class Calculator {
 		switchMap.put(6, new DetermineWeekNumber());
 
 		Menu menu = new Menu();
+		menu.addChoice("Display Session History");
+		menu.addChoice("Display History of Last 100 Sessions");
 		menu.displayMenu();
 		CalculatorInputBo inpBo = new CalculatorInputBo();
 		CalculatorOutputBo outBo = new CalculatorOutputBo();
-		CalculatorInput inp = inpBo.calculatorInput();
-		int choice = inp.getChoice();
-		CalculatorOutput out = null;
+		HistoryBo historyBo = new HistoryBo();
+		LocalDateTime now = LocalDateTime.now();
+		CalculatorInput input = inpBo.calculatorInput();
+		int choice = input.getChoice();
+		CalculatorOutput output = null;
 		while (choice != -1) {
-			out = switchMap.get(inp.getChoice()).perform(inp);
-			Integer outId = outBo.calculatorOutput(out, choice);
-			inp = inpBo.calculatorInput();
-			choice = inp.getChoice();
+			if (choice <= 6) {
+				output = switchMap.get(choice).perform(input);
+				Integer outId = outBo.calculatorOutput(output, choice);
+				historyBo.addHistory(now, input, output);
+			} else if (choice == 7) {
+				historyBo.displaySessionHistory(now);
+			} else if (choice == 8) {
+				historyBo.displayLast100SessionsHistory();
+			}
+			input = inpBo.calculatorInput();
+			choice = input.getChoice();
+
 		}
 
 		System.out.println("Closing...");

@@ -28,6 +28,7 @@
 			class="com.sapient.datetimecalculator.dbms.NumericalDate" />
 		<mapping
 			class="com.sapient.datetimecalculator.dbms.CalculatorOutput" />
+		<mapping class="com.sapient.datetimecalculator.dbms.History" />
 
 	</session-factory>
 </hibernate-configuration>

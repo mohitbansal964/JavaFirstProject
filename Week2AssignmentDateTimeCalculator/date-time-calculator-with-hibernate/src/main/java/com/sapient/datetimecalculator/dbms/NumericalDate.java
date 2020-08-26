@@ -98,4 +98,10 @@ public class NumericalDate {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "NumericalDate [numberOfDays=" + numberOfDays + ", numberOfWeeks=" + numberOfWeeks + ", numberOfMonths="
+				+ numberOfMonths + ", numberOfYears=" + numberOfYears + "]";
+	}
+
 }

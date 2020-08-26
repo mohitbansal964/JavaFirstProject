@@ -18,7 +18,7 @@ public class CalculatorInput {
 	private int choice;
 	private LocalDateTime date1;
 	private LocalDateTime date2;
-	@OneToOne(cascade = CascadeType.REMOVE)
+	@OneToOne(cascade = CascadeType.ALL)
 	private NumericalDate date3;
 
 	public CalculatorInput() {
@@ -69,6 +69,11 @@ public class CalculatorInput {
 
 	public void setDate3(NumericalDate date3) {
 		this.date3 = date3;
+	}
+
+	@Override
+	public String toString() {
+		return "CalculatorInput [choice=" + choice + ", date1=" + date1 + ", date2=" + date2 + ", date3=" + date3 + "]";
 	}
 
 }

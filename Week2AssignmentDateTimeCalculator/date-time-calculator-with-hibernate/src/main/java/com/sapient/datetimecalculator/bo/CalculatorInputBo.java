@@ -22,7 +22,7 @@ public class CalculatorInputBo {
 		System.out.print("Enter choice: ");
 		int choice = Reader.scan.nextInt();
 		Reader.scan.nextLine();
-		if (choice == -1) {
+		if (choice == -1 || choice == 7 || choice == 8) {
 			return new CalculatorInput(choice, null, null, null);
 		}
 		System.out.print("Enter Date and Time in (dd-mm-yyyy hh:mm:ss) format: ");
