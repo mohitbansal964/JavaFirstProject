@@ -6,10 +6,10 @@
 	<artifactId>data-time-calculator-with-jsp</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>data-time-calculator-with-jsp Maven Webapp</name>
+	<name>date-time-calculator-with-jsp Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<build>
-		<finalName>data-time-calculator-with-jsp</finalName>
+		<finalName>date-time-calculator-with-jsp</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
